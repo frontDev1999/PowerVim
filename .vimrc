@@ -218,7 +218,7 @@ autocmd InsertEnter * se cul    " 用浅色高亮当前行"
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示
 
 :colorscheme desert     " 设置主题
-vim-commentary style set 注释针对不同语言的注释方法
+"vim-commentary style set 注释针对不同语言的注释方法
 autocmd FileType cpp set commentstring=//\ %s
 autocmd FileType php set commentstring=//\ %s
 " set modeline
