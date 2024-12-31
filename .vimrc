@@ -37,10 +37,10 @@ set incsearch		" do incremental searching
 "设置非兼容模式
 set nocp
 
-"set encoding=utf-8
-""set encoding=gb2312
-set langmenu=zh_CN.gb2312
-language message zh_CN.gb2312
+set encoding=utf-8
+set encoding=gb2312
+"set langmenu=zh_CN.gb2312
+"language message zh_CN.gb2312
 
 set fileencoding=gbk2312
 set ts=4
@@ -217,8 +217,8 @@ set ruler           " 显示标尺"
 autocmd InsertEnter * se cul    " 用浅色高亮当前行"
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示
 
-" :colorscheme desert     " 设置主题
-" vim-commentary style set 注释针对不同语言的注释方法
+:colorscheme desert     " 设置主题
+vim-commentary style set 注释针对不同语言的注释方法
 autocmd FileType cpp set commentstring=//\ %s
 autocmd FileType php set commentstring=//\ %s
 " set modeline
@@ -313,7 +313,7 @@ endfunc
 " Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录 
 
 " 使用的背景主题
-colorscheme Monokai_Gavin
+" colorscheme Monokai_Gavin
 " 添加自动补全字典
 au FileType php setlocal dict+=~/.vim/dictionary/php_keywords_list.txt
 au FileType cpp setlocal dict+=~/.vim/dictionary/cpp_keywords_list.txt
