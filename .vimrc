@@ -19,28 +19,26 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 "set autocmd
-set autoindent		" always set autoindenting on 自动缩进
+set autoindent          " always set autoindenting on 自动缩进
 " indent C++ autoindent private public keyword 
 set cindent
 set cinoptions=g-1
 "if has("vms")
-"  set nobackup		" do not keep a backup file, use versions instead
+"  set nobackup         " do not keep a backup file, use versions instead
 "else
-"  set backup		" keep a backup file
+"  set backup           " keep a backup file
 "endif
 set nobackup        "I hate backup files.
 set number
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50          " keep 50 lines of command line history
+set ruler               " show the cursor position all the time
+set showcmd             " display incomplete commands
+set incsearch           " do incremental searching
 "设置非兼容模式
 set nocp
 
 set encoding=utf-8
 set encoding=gb2312
-"set langmenu=zh_CN.gb2312
-"language message zh_CN.gb2312
 
 set fileencoding=gbk2312
 set ts=4
@@ -48,6 +46,8 @@ set sw=4
 set smartindent
 set showmatch        " Show matching brackets.
 set guioptions-=T
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 let curpwd = getcwd()
@@ -184,8 +184,8 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 " 重新打开文档时光标回到文档关闭前的位置
 if has("autocmd")
  autocmd BufReadPost *
- \ if line("'\"") > 0 && line ("'\"") <= line("$") |
- \ exe "normal g'\"" |
+\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+\ exe "normal g'\"" |
 \ endif
 endif
 
@@ -213,8 +213,9 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 
-set ruler           " 显示标尺"
-autocmd InsertEnter * se cul    " 用浅色高亮当前行"
+"set ruler           " 显示标尺"
+"autocmd InsertEnter * se cul  {}  " 用浅色高亮当前行"
+
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示
 
 :colorscheme desert     " 设置主题
@@ -269,6 +270,10 @@ func SetTitle()
     autocmd BufNewFile * normal G
 endfunc
 
+" 实现CTRL + s 保存文件 
+nmap <C-s> :w!<CR>
+vmap <C-s> <C-c>:w!<CR>
+imap <C-s> <Esc>:w!<CR>
 
 " shortcut for markdown
 " 创建时间快捷键for markdown
@@ -313,7 +318,7 @@ endfunc
 " Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录 
 
 " 使用的背景主题
-" colorscheme Monokai_Gavin
+"colorscheme Monokai_Gavin
 " 添加自动补全字典
 au FileType php setlocal dict+=~/.vim/dictionary/php_keywords_list.txt
 au FileType cpp setlocal dict+=~/.vim/dictionary/cpp_keywords_list.txt
