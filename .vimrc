@@ -271,10 +271,10 @@ func SetTitle()
     autocmd BufNewFile * normal G
 endfunc
 
-" 实现CTRL + s 保存文件 
-nmap <C-s> :w!<CR>
-vmap <C-s> <C-c>:w!<CR>
-imap <C-s> <Esc>:w!<CR>
+" 实现CTRL + d 保存文件 
+nmap <C-d> :w!<CR>
+vmap <C-d> <C-c>:w!<CR>
+imap <C-d> <Esc>:w!<CR>
 
 " shortcut for markdown
 " 创建时间快捷键for markdown
